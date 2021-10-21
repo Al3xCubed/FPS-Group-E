@@ -1,0 +1,23 @@
+# ProBuilder 4.5.2
+# https://unity3d.com/unity/features/worldbuilding/probuilder
+# 10/21/2021 7:48:54 PM
+
+mtllib ./SniperPointer.mtl
+o SniperPointer
+
+g Plane
+v -0.4546347 -29.27924 0
+v -0.5453861 -29.27924 0
+v -0.4546134 256.5292 0
+v -0.5453648 256.5292 0
+
+vt -0.4546347 -29.27924
+vt -0.5453861 -29.27924
+vt -0.4546134 256.5292
+vt -0.5453648 256.5292
+
+vn 0 0 1
+
+usemtl Lazer_Red
+f 3/3/1 4/4/1 2/2/1 1/1/1
+
