@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1345943282138014167}
   - component: {fileID: 8567646967810328132}
   m_Layer: 0
-  m_Name: Enemy_MGTurret
+  m_Name: Enemy_MGTurretShortRange
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1483,14 +1483,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d57ebae9f701b57448648b380d0beb65, type: 2}
-    - target: {fileID: 13700002, guid: fad35a70731ab804c975c717ee8862a5, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 97f975162d882f149b45a710cf662a7c, type: 2}
-    - target: {fileID: 13700004, guid: fad35a70731ab804c975c717ee8862a5, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 97f975162d882f149b45a710cf662a7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fad35a70731ab804c975c717ee8862a5, type: 3}
 --- !u!4 &7886326314632062843 stripped
