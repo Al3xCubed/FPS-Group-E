@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de99b30e1e73fd14e98cc5371da25d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.1
+  radius: 0.2
   root: {fileID: 3659995153115176982}
   tip: {fileID: 1135791333161367127}
   maxLifeTime: 5
@@ -73,7 +73,7 @@ MonoBehaviour:
   gravityDownAcceleration: 0
   trajectoryCorrectionDistance: 5
   inheritWeaponVelocity: 0
-  damage: 5
+  damage: 10
   areaOfDamage: {fileID: 0}
   radiusColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &5564024855854763701
