@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1345943282138014167}
   - component: {fileID: 8567646967810328132}
   m_Layer: 0
-  m_Name: Enemy_SniperTurret
+  m_Name: DEPRECATEDSNIPER
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
