@@ -1,36 +1,21 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator), typeof(AudioSource), typeof(Lockable))]
 public class Door : MonoBehaviour {
-	public GameObject mesh;
-	public ParticleSystem particles;
-	public List<DoorLock> locks = new List<DoorLock>();
-	private bool isOpen = false;
+	void Start() {
+		AudioSource audioSource = this.GetComponent<AudioSource>();
+		Animator animator = this.GetComponent<Animator>();
+		Lockable lockable = this.GetComponent<Lockable>();
+		Objective objective = this.GetComponent<Objective>();
 
-	void Update() {
-		if (this.locks.All(l => !l.isLocked)) this.Open();
-		else this.Close();
-	}
-
-	private void Sync() {
-		this.mesh.SetActive(!this.isOpen);
-	}
-
-	[ContextMenu("Open")]
-	public void Open() {
-		if (this.isOpen) return;
-
-		this.isOpen = true;
-		this.particles.Play();
-		this.Sync();
-	}
-
-	[ContextMenu("Close")]
-	public void Close() {
-		if (!this.isOpen) return;
-
-		this.isOpen = false;
-		this.Sync();
+		lockable.onLock.AddListener(() => {
+			audioSource.Play();
+			animator.SetBool("character_nearby", false);
+		});
+		lockable.onUnlock.AddListener(() => {
+			audioSource.Play();
+			animator.SetBool("character_nearby", true);
+			objective?.CompleteObjective(string.Empty, string.Empty, "Objective complete : " + objective.title);
+		});
 	}
 }
