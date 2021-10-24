@@ -53,10 +53,11 @@ public class DetectionModule : MonoBehaviour
             if (otherActor.affiliation != actor.affiliation)
             {
                 float sqrDistance = (otherActor.transform.position - detectionSourcePoint.position).sqrMagnitude;
+				int layerMask = ~LayerMask.GetMask("PlayerBlocker");
                 if (sqrDistance < sqrDetectionRange && sqrDistance < closestSqrDistance)
                 {
                     // Check for obstructions
-                    RaycastHit[] hits = Physics.RaycastAll(detectionSourcePoint.position, (otherActor.aimPoint.position - detectionSourcePoint.position).normalized, detectionRange, -1, QueryTriggerInteraction.Ignore);
+                    RaycastHit[] hits = Physics.RaycastAll(detectionSourcePoint.position, (otherActor.aimPoint.position - detectionSourcePoint.position).normalized, detectionRange, layerMask, QueryTriggerInteraction.Ignore);
                     RaycastHit closestValidHit = new RaycastHit();
                     closestValidHit.distance = Mathf.Infinity;
                     bool foundValidHit = false;
