@@ -120,13 +120,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2104015986810675393, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
+      propertyPath: weaponName
+      value: sniperwhydoyouhavethis
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104015986810675393, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
       propertyPath: delayBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231955200838058728, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231955200838058728, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
+      propertyPath: Priority
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774235613882044843, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
+      propertyPath: knownTargetTimeout
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4234830436940505133, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
+      propertyPath: onDetectSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fac2ef5c59df1a45985d3eb894e8d47, type: 3}
+    - target: {fileID: 4234830436940505133, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
       propertyPath: detectionFireDelay
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116395795843571533, guid: 38ed22e9e112b7545a1160719eb88af4,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 6075335073582352468, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
