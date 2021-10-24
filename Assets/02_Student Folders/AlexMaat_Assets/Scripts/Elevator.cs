@@ -6,15 +6,18 @@ public class Elevator : MonoBehaviour {
 	public float height = 5f;
 	public float speed = 1f;
 
+	[SerializeField] private List<GameObject> enabledOnTravel;
+	[SerializeField] private List<GameObject> disabledOnFinish;
+	[SerializeField] private List<GameObject> disabledOnAwake;
 	private BoxCollider trigger;
 	private AudioSource audioSource;
-	private Transform player;
-	private Vector3 originalPlayerPosition;
 	private Vector3 originalPosition;
 
 	void Start() {
 		this.trigger = this.GetComponent<BoxCollider>();
 		this.audioSource = this.GetComponent<AudioSource>();
+
+		this.disabledOnAwake.ForEach(go => go.SetActive(false));
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -23,9 +26,9 @@ public class Elevator : MonoBehaviour {
 
 	public IEnumerator MoveElevator(GameObject player) {
 		this.audioSource.Play();
-		this.player = player.transform;
-		this.originalPlayerPosition = this.player.position;
+		this.enabledOnTravel.ForEach(go => go.SetActive(true));
 		this.originalPosition = this.transform.position;
+		player.transform.SetParent(this.transform, true);
 
 		this.trigger.enabled = false;
 
@@ -37,10 +40,11 @@ public class Elevator : MonoBehaviour {
 		}
 		height = this.height;
 		this.MoveElevatorTo(height);
+		this.disabledOnFinish.ForEach(go => go.SetActive(false));
+		player.transform.SetParent(null, true);
 	}
 
 	private void MoveElevatorTo(float height) {
 		this.transform.position = this.originalPosition + height * Vector3.up;
-		this.player.position = this.originalPlayerPosition + height * Vector3.up;
 	}
 }
