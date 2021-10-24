@@ -57,6 +57,7 @@ public class ProjectileStandard : MonoBehaviour
 
     private void OnEnable()
     {
+		this.hittableLayers = ~LayerMask.GetMask("PlayerBlocker");
         m_ProjectileBase = GetComponent<ProjectileBase>();
         DebugUtility.HandleErrorIfNullGetComponent<ProjectileBase, ProjectileStandard>(m_ProjectileBase, this, gameObject);
 

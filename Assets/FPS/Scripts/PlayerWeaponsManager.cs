@@ -150,9 +150,10 @@ public class PlayerWeaponsManager : MonoBehaviour
 
         // Pointing at enemy handling
         isPointingAtEnemy = false;
+		int layerMask = ~LayerMask.GetMask("PlayerBlocker");
         if (activeWeapon)
         {
-            if(Physics.Raycast(weaponCamera.transform.position, weaponCamera.transform.forward, out RaycastHit hit, 1000, -1, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(weaponCamera.transform.position, weaponCamera.transform.forward, out RaycastHit hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
             {
                 if(hit.collider.GetComponentInParent<EnemyController>())
                 {
