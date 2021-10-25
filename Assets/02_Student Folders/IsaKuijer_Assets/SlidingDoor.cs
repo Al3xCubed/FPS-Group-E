@@ -18,7 +18,7 @@ public class SlidingDoor : MonoBehaviour
 public Transform door1;
 public Transform door2;
 
- Collider triggerZone;
+  public Collider triggerZone;
  public AudioSource soundEffect;
 
     // Start is called before the first frame update
@@ -66,10 +66,15 @@ public Transform door2;
     
     if (!isOpen)
     {
+        
+    }
+}
+
+    public void Open()
+    {
         isOpen = true;
         timer = timerLength;
         opening = true;
         soundEffect.Play();
     }
-}
 }
