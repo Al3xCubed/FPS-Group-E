@@ -12,7 +12,6 @@ public class Platform_up : MonoBehaviour
   public void Move()
     {
         isMoving = true;
-        Debug.Log("hoi");
     }
     void Update()
     {
