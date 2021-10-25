@@ -23,7 +23,7 @@ public class DecoyFollow : MonoBehaviour
 
 
 
-        if (DecoyFollowing = true)
+        if (DecoyFollowing == true)
             gameObject.transform.SetParent(FollowTarget.transform);
         else
             gameObject.transform.SetParent(null);
