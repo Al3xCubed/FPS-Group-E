@@ -18,10 +18,10 @@ public class DecoyToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Tech") && timer==0) {
+        if (Input.GetButton("Tech") && timer == 0) {
             Decoyscript.Following = false;
             timer = TimeToRecharge;
-                }
+        }
         if (timer < 0)
         {
             timer += Time.deltaTime;
@@ -29,11 +29,13 @@ public class DecoyToggle : MonoBehaviour
 
 
         }
-        else if (timer >= 0)
+        if (timer >= 0)
         {
             timer = 0;
-            Decoyscript.Following = true;
+
         }
-            
+        else if (timer >= TimeToRecharge / 2) {
+            Decoyscript.Following = true;
+    }
     }
 }
