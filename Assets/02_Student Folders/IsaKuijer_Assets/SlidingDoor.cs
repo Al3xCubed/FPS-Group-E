@@ -60,9 +60,9 @@ public Transform door2;
 }
     void OnTriggerEnter (Collider other)
 {
-    Damageable check = other.GetComponent<Damageable>();
+    ProjectileStandard Projectile = other.GetComponent<ProjectileStandard>();
 
-    if (check == null) return;
+    if (Projectile == null) return;
     
     if (!isOpen)
     {
