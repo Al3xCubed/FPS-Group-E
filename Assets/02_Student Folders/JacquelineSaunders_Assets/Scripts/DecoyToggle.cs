@@ -9,7 +9,7 @@ public class DecoyToggle : MonoBehaviour
     public float timer = 0;
     public AudioClip startSFX;
     public AudioClip stopSFX;
-
+    bool Sounded = false;
 
     public DecoyFollow2 Decoyscript;
     // Start is called before the first frame update
@@ -25,22 +25,30 @@ public class DecoyToggle : MonoBehaviour
             Decoyscript.Following = false;
             timer = TimeToRecharge;
             AudioUtility.CreateSFX(startSFX, transform.position, AudioUtility.AudioGroups.Pickup, 0f);
+            Sounded = false;
         }
         if (timer < 0)
         {
             timer += Time.deltaTime;
-
+            
 
 
         }
+
+        
+
         if (timer >= 0)
         {
             timer = 0;
-
+            
         }
         else if (timer >= TimeToRecharge / 2) {
             Decoyscript.Following = true;
-            AudioUtility.CreateSFX(stopSFX, transform.position, AudioUtility.AudioGroups.WeaponOverheat, -2f);
+            if (Sounded == false)
+            {
+                Sounded = true;
+                AudioUtility.CreateSFX(stopSFX, transform.position, AudioUtility.AudioGroups.WeaponOverheat, -2f);
+            }
         }
     }
 }
