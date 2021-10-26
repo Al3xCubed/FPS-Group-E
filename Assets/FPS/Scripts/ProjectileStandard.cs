@@ -202,8 +202,9 @@ public class ProjectileStandard : MonoBehaviour
         return true;
     }
 
-    void OnHit(Vector3 point, Vector3 normal, Collider collider)
-    { 
+    public void OnHit(Vector3 point, Vector3 normal, Collider collider)
+    {
+		collider.GetComponent<Triggerable>()?.Trigger();
         // damage
         if (areaOfDamage)
         {

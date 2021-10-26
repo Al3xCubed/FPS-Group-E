@@ -4,73 +4,27 @@ using UnityEngine;
 
 public class Platform_up : MonoBehaviour
 {
-    int number = 3;
-    public float speed = 3f;
-    bool isOpen = false;
-    bool opening = false;
-    bool closing = false;
-    float timer;
-    float timerLength = 1f;
-    Vector3 platform1DefaultPos = new Vector3(0, 0, 0);
-    
-
-
-    public Transform platform1;
-    
-
-    Collider triggerZone;
-    public AudioSource soundEffect;
-
-    // Start is called before the first frame update
+    public float speed = 1f;
+    private Vector3 target;
+    public Vector3 direction;
+    private Vector3 origin;
+    private bool isMoving = false;
+  public void Move()
+    {
+        isMoving = true;
+    }
+    void Update()
+    {
+        if (isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        }
+    }
     void Start()
     {
-        triggerZone = GetComponent<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-
-    {
-        if (opening && timer > 0f)
-        {
-           platform1.Translate(-Vector3.up * Time.deltaTime * speed);
-            
-            timer -= Time.deltaTime;
-        }
-        else if (opening && timer <= 0f)
-        {
-            opening = false;
-            timer = timerLength;
-            closing = true;
-        }
-        if (closing && timer > 0f)
-        {
-            platform1.Translate(-Vector3.right * Time.deltaTime * speed);
-            timer -= Time.deltaTime;
-        }
-        else if (closing && timer <= 0f)
-        {
-            closing = false;
-            timer = timerLength;
-            isOpen = false;
-            platform1.localPosition = platform1DefaultPos;
-            
-
-        }
+        origin = transform.position;
+        target = origin + direction;
 
     }
-    void OnTriggerEnter(Collider other)
-    {
-        Damageable check = other.GetComponent<Damageable>();
-
-        if (check == null) return;
-
-        if (!isOpen)
-        {
-            isOpen = true;
-            timer = timerLength;
-            opening = true;
-            soundEffect.Play();
-        }
-    }
+   
 }

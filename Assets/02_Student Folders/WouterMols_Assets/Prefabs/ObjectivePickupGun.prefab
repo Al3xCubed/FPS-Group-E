@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1811263550}
   - component: {fileID: 1811263551}
   m_Layer: 0
-  m_Name: ObjectivePickupItem 1
+  m_Name: ObjectivePickupGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
