@@ -94,10 +94,12 @@ public class InGameMenuManager : MonoBehaviour
     }
 
 	public void RestartLevel()  {
+		ClosePauseMenu();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	public void ToMainMenu() {
+		ClosePauseMenu();
 		SceneManager.LoadScene(0);
 	}
 
