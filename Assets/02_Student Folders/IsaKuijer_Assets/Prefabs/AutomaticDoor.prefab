@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033817660466030910}
-  - component: {fileID: 6033817660466030911}
   - component: {fileID: 6033817660466030909}
-  - component: {fileID: 6033817660466030904}
   - component: {fileID: -2422559155571543987}
   m_Layer: 0
   m_Name: AutomaticDoor
@@ -36,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6033817660466030911
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033817660466030908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: 3}
-  m_Center: {x: -1, y: 2, z: 0}
 --- !u!114 &6033817660466030909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,34 +51,6 @@ MonoBehaviour:
   door2: {fileID: 6033817661720781364}
   triggerZone: {fileID: 0}
   soundEffect: {fileID: -2422559155571543987}
---- !u!114 &6033817660466030904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033817660466030908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f213e7c7ce37b24cab86d520adc2a2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coll: {fileID: 6033817660466030911}
-  ontrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6033817660466030909}
-        m_TargetAssemblyTypeName: SlidingDoor, Assembly-CSharp
-        m_MethodName: Open
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!82 &-2422559155571543987
 AudioSource:
   m_ObjectHideFlags: 0
@@ -198,11 +155,38 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6033817661629707244}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3490463, y: 3.85862, z: 0.14652929}
+  m_Size: {x: 1.3490463, y: 3.85862, z: 0.5}
   m_Center: {x: -0.7254762, y: 1.9999999, z: 0}
+--- !u!114 &1292563494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033817661629707244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f213e7c7ce37b24cab86d520adc2a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ontrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6033817660466030909}
+        m_TargetAssemblyTypeName: SlidingDoor, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &6033817662144790661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -211,11 +195,38 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6033817661721280020}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6227976, y: 3.85862, z: 0.14652929}
+  m_Size: {x: 1.6227976, y: 3.85862, z: 0.5}
   m_Center: {x: 0.8620849, y: 1.9999999, z: 0}
+--- !u!114 &1483974665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033817661721280020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f213e7c7ce37b24cab86d520adc2a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ontrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6033817660466030909}
+        m_TargetAssemblyTypeName: SlidingDoor, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &6033817661629740364
 PrefabInstance:
   m_ObjectHideFlags: 0
