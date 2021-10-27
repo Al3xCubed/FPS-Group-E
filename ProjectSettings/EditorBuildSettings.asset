@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/02_Student Folders/IsaKuijer_Assets/The Abandoned Base.unity
     guid: 4262bbf96ef9fda4c8086a71e44e0cd7
   - enabled: 1
-    path: Assets/02_Student Folders/AlexMaat_Assets/AlexMaat_Scene.unity
+    path: Assets/02_Student Folders/AlexMaat_Assets/Powering Up.unity
     guid: 2a0936fbcfb722d459d91cb6838e63a8
   - enabled: 1
     path: Assets/02_Student Folders/DanielKuiper_Assets/The Moon Walk.unity
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/02_Student Folders/WouterMols_Assets/MegaBot's Revenge.unity
     guid: 3bc8bf50646ad364ebe91cd897c733dc
   - enabled: 1
-    path: Assets/02_Student Folders/JacquelineSaunders_Assets/Timelime Hill Scene.unity
+    path: Assets/02_Student Folders/JacquelineSaunders_Assets/Timelime Hill.unity
     guid: c21c8fcce36a10c4fa2ba41808ee814b
   m_configObjects: {}
