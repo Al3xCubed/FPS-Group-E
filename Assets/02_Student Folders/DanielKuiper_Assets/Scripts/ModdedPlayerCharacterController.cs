@@ -25,6 +25,8 @@ public class ModdedPlayerCharacterController : MonoBehaviour
     public float gravityRotationSpeed = 20;
 
     [Header("Movement")]
+    [Tooltip("Enable Movement")]
+    public bool MovementEnabled = false;
     [Tooltip("Max movement speed when grounded (when not sprinting)")]
     public float maxSpeedOnGround = 10f;
     [Tooltip("Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
@@ -259,6 +261,7 @@ public class ModdedPlayerCharacterController : MonoBehaviour
             playerCamera.transform.localEulerAngles = new Vector3(m_CameraVerticalAngle, 0, 0);
         }
 
+
         // character movement handling
         bool isSprinting = m_InputHandler.GetSprintInputHeld();
         {
@@ -270,7 +273,7 @@ public class ModdedPlayerCharacterController : MonoBehaviour
             float speedModifier = isSprinting ? sprintSpeedModifier : 1f;
 
             // converts move input to a worldspace vector based on our character's transform orientation
-            Vector3 worldspaceMoveInput = transform.TransformVector(m_InputHandler.GetMoveInput());
+            Vector3 worldspaceMoveInput = MovementEnabled ? transform.TransformVector(m_InputHandler.GetMoveInput()) : Vector3.zero;
 
             // handle grounded movement
             if (isGrounded)
@@ -307,7 +310,7 @@ public class ModdedPlayerCharacterController : MonoBehaviour
 
                         // Force grounding to false
                         isGrounded = false;
-                        m_GroundNormal = Vector3.up;
+                        m_GroundNormal = transform.up;
 
                     }
                 }

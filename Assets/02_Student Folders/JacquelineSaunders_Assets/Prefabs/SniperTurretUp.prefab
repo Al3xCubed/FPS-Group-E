@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 4234830436940505133, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
       propertyPath: detectionFireDelay
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5116395795843571533, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 6370966072896210225, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 7486885224437063031, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
