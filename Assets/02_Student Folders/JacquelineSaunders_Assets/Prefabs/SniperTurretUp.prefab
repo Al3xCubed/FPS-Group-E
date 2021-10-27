@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 4234830436940505133, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
       propertyPath: detectionFireDelay
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5116395795843571533, guid: 38ed22e9e112b7545a1160719eb88af4,
         type: 3}
