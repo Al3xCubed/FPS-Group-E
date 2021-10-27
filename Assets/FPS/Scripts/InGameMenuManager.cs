@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InGameMenuManager : MonoBehaviour
@@ -91,6 +92,14 @@ public class InGameMenuManager : MonoBehaviour
     {
         SetPauseMenuActivation(false);
     }
+
+	public void RestartLevel()  {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void ToMainMenu() {
+		SceneManager.LoadScene(0);
+	}
 
     void SetPauseMenuActivation(bool active)
     {
