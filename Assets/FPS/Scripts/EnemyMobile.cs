@@ -78,7 +78,7 @@ public class EnemyMobile : MonoBehaviour
                 if (m_EnemyController.isSeeingTarget && m_EnemyController.isTargetInAttackRange)
                 {
                     aiState = AIState.Attack;
-                    m_EnemyController.SetNavDestination(transform.position);
+                    if (m_EnemyController.isActiveAndEnabled) m_EnemyController.SetNavDestination(transform.position);
                 }
                 break;
             case AIState.Attack:
@@ -98,10 +98,10 @@ public class EnemyMobile : MonoBehaviour
         {
             case AIState.Patrol:
                 m_EnemyController.UpdatePathDestination();
-                m_EnemyController.SetNavDestination(m_EnemyController.GetDestinationOnPath());
+                if (m_EnemyController.isActiveAndEnabled) m_EnemyController.SetNavDestination(m_EnemyController.GetDestinationOnPath());
                 break;
             case AIState.Follow:
-                m_EnemyController.SetNavDestination(m_EnemyController.knownDetectedTarget.transform.position);
+                if (m_EnemyController.isActiveAndEnabled) m_EnemyController.SetNavDestination(m_EnemyController.knownDetectedTarget.transform.position);
                 m_EnemyController.OrientTowards(m_EnemyController.knownDetectedTarget.transform.position);
                 m_EnemyController.OrientWeaponsTowards(m_EnemyController.knownDetectedTarget.transform.position);
                 break;
@@ -109,11 +109,11 @@ public class EnemyMobile : MonoBehaviour
                 if (Vector3.Distance(m_EnemyController.knownDetectedTarget.transform.position, m_EnemyController.m_DetectionModule.detectionSourcePoint.position) 
                     >= (attackStopDistanceRatio * m_EnemyController.m_DetectionModule.attackRange))
                 {
-                    m_EnemyController.SetNavDestination(m_EnemyController.knownDetectedTarget.transform.position);
+                    if (m_EnemyController.isActiveAndEnabled) m_EnemyController.SetNavDestination(m_EnemyController.knownDetectedTarget.transform.position);
                 }
                 else
                 {
-                    m_EnemyController.SetNavDestination(transform.position);
+                    if (m_EnemyController.isActiveAndEnabled) m_EnemyController.SetNavDestination(transform.position);
                 }
                 m_EnemyController.OrientTowards(m_EnemyController.knownDetectedTarget.transform.position);
                 m_EnemyController.TryAtack(m_EnemyController.knownDetectedTarget.transform.position);
