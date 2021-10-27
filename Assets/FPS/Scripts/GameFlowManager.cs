@@ -22,6 +22,7 @@ public class GameFlowManager : MonoBehaviour
     int nextSceneIndex;
 
     PlayerCharacterController m_Player;
+    ModdedPlayerCharacterController m_MPlayer;
     NotificationHUDManager m_NotificationHUDManager;
     ObjectiveManager m_ObjectiveManager;
     float m_TimeLoadEndGameScene;
@@ -30,6 +31,8 @@ public class GameFlowManager : MonoBehaviour
     {
         m_Player = FindObjectOfType<PlayerCharacterController>();
         DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, GameFlowManager>(m_Player, this);
+        m_MPlayer = FindObjectOfType<ModdedPlayerCharacterController>();
+        DebugUtility.HandleErrorIfNullFindObject<ModdedPlayerCharacterController, GameFlowManager>(m_MPlayer, this);
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
 		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
@@ -59,7 +62,7 @@ public class GameFlowManager : MonoBehaviour
                 EndGame(true);
 
             // Test if player died
-            if (m_Player.isDead)
+            if (m_Player.isDead || m_MPlayer.isDead)
                 EndGame(false);
         }
     }
